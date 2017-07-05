@@ -48,12 +48,26 @@ public class EscaleCtrl {
 	}
 	
 	@RequestMapping("/edit")
-	public String edit(@RequestParam(name = "id", required = true) EscaleId id, Model model) {
+	public String edit(@RequestParam(name = "vol", required = true) int volId, @RequestParam(name = "aero", required = true) int aeroId, Model model) {
+
+		EscaleId id = new EscaleId();
+		id.setAeroport(aeroId);
+		id.setVol(volId);
+		
 		Escale escale = escaleDao.find(id);
-		List<Aeroport> aeroports = aeroportDao.findAll();
+		model.addAttribute("escale",escale);
+		
+		List<Vol> vols = volDao.findAll();
+		model.addAttribute("vols", vols );
+		
+		List<Aeroport> aeroports= aeroportDao.findAll();
+		model.addAttribute("aeroports",aeroports);
+		
+		//		Escale escale = escaleDao.find(id);
+//		List<Aeroport> aeroports = aeroportDao.findAll();
 //		Aeroport aeroport = aeroportDao.find(escale.getAeroport());
-		model.addAttribute("escale", escale);
-		model.addAttribute("aeroports", aeroports);
+//		model.addAttribute("escale", escale);
+//		model.addAttribute("aeroports", aeroports);
 
 		return "escale/escaleEdit";
 	}
