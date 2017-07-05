@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import vol.metier.dao.AeroportDao;
 import vol.metier.dao.CompagnieAerienneDao;
+import vol.metier.dao.EscaleDao;
 import vol.metier.dao.VolDao;
 import vol.metier.model.Vol;
 
@@ -67,6 +68,9 @@ public class VolController {
 		model.addAttribute("vol", vol);
 		model.addAttribute("vols", volDao.findAll());
 		
+		//Envoi de deux listes d'aéroports à la JSP
+		model.addAttribute("departs", aeroportDao.findAll());
+		model.addAttribute("arrivees", aeroportDao.findAll());
 		
 		return "vol/volEdit";
 	}
