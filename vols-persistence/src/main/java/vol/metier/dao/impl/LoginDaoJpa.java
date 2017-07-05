@@ -57,14 +57,14 @@ public class LoginDaoJpa implements LoginDao {
 
 	@Override
 	public void delete(Login login) {
-		em.remove(login);
+		em.remove(em.merge(login));
 
 	}
 
 	@Override
 	public void delete(Long id) {
 		Login login = find(id);
-		em.remove(login);
+		em.remove(em.merge(login));
 
 	}
 
