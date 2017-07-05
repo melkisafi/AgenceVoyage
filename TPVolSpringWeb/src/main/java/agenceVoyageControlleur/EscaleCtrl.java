@@ -63,13 +63,15 @@ public class EscaleCtrl {
 		List<Aeroport> aeroports= aeroportDao.findAll();
 		model.addAttribute("aeroports",aeroports);
 		
-		//		Escale escale = escaleDao.find(id);
+		model.addAttribute("mode", "edit");
+		
+//				Escale escale = escaleDao.find(id);
 //		List<Aeroport> aeroports = aeroportDao.findAll();
 //		Aeroport aeroport = aeroportDao.find(escale.getAeroport());
 //		model.addAttribute("escale", escale);
 //		model.addAttribute("aeroports", aeroports);
 
-		return "escale/escaleEdit";
+		return "escale/escalesEdit";
 	}
 	
 	@RequestMapping("/add")

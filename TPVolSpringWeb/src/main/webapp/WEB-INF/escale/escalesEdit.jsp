@@ -39,9 +39,9 @@
 			<form:form modelAttribute="escale" action="save" method="post">
 				<%-- 				<form:hidden path="id" /> --%>
 				<%-- 				<form:hidden path="version" /> --%>
-
+				<input type="hidden" name="mode" value="${mode}"/>
 				<div class="form-group">
-					<form:label path="vol.id"><spring:message code="escale.add.vol" /></form:label>
+					<form:label path="vol"><spring:message code="escale.add.vol" /></form:label>
 					<form:select path="vol.id" id="vol" cssClass="form-control" cssStyle="width: 400px">
 						<form:option value="${null}">Veuillez choisir un vol</form:option>
 						<c:forEach items="${vols}" var="vol">
@@ -64,12 +64,12 @@
 
 				<div class="form-group">
 					<form:label path="heureArrivee"><spring:message code="escale.add.heureArrivee" /></form:label>
-					<form:input path="heureArrivee" type="Time" cssClass="form-control" cssStyle="width: 400px" />
+					<form:input path="heureArrivee" type="Time" cssClass="form-control" cssStyle="width: 400px"/>
 					<form:errors path="heureArrivee" cssStyle="color:red" />
 				</div>
 				<div class="form-group">
 					<form:label path="heureDepart"><spring:message code="escale.add.heureDepart" /></form:label>
-					<form:input path="heureDepart" type="Time" cssClass="form-control" cssStyle="width: 400px" />
+					<form:input path="heureDepart" type="Time" cssClass="form-control" cssStyle="width: 400px"/>
 					<form:errors path="heureDepart" cssStyle="color:red" />
 				</div>
 				<button class="btn btn-success" type="submit"><span class="glyphicon glyphicon-ok"></span></button>
