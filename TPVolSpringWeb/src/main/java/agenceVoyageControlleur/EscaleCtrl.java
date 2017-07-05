@@ -75,7 +75,8 @@ public class EscaleCtrl {
 	public String save(@ModelAttribute("escale") @Valid Escale escale, BindingResult result) {
 		
 		
-		
+		escale.setVol(volDao.find(escale.getVol().getId()));  
+		escale.setAeroport(aeroportDao.find(escale.getAeroport().getId()));
 		
 		//Derniere etape
 		//create escale

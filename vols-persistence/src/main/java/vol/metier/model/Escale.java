@@ -39,8 +39,8 @@ public class Escale {
 	@Column(name = "heuredepart")
 	@Temporal(TemporalType.TIME)
 	@DateTimeFormat(pattern="HH:mm")
-//	@NotNull(message="{validator.heureDepart}")
-//	@Future(message="{validator.pasFuture}")
+	@NotNull(message="{validator.heureDepart}")
+	@Future(message="{validator.pasFuture}")
 	public Date getHeureDepart() {
 		return heureDepart;
 	}
@@ -52,7 +52,7 @@ public class Escale {
 	@Column(name = "heurearrivee")
 	@DateTimeFormat(pattern="HH:mm")
 	@Temporal(TemporalType.TIME)
-//	@NotNull(message="{validator.heureArrivee}")
+	@NotNull(message="{validator.heureArrivee}")
 	public Date getHeureArrivee() {
 		return heureArrivee;
 	}
