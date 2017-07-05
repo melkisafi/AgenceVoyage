@@ -98,7 +98,7 @@ public class Vol {
 		this.escales = escales;
 	}
 
-	@ManyToOne
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "depart_id")	
 	public Aeroport getDepart() {
 		return depart;
@@ -108,7 +108,7 @@ public class Vol {
 		this.depart = depart;
 	}
 
-	@ManyToOne
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "arrivee_id")
 	public Aeroport getArrivee() {
 		return arrivee;
