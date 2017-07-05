@@ -42,7 +42,7 @@
 				<input type="hidden" name="mode" value="${mode}"/>
 				<div class="form-group">
 					<form:label path="vol"><spring:message code="escale.add.vol" /></form:label>
-					<form:select path="vol.id" id="vol" cssClass="form-control" cssStyle="width: 400px">
+					<form:select path="vol.id" id="vol" cssClass="form-control" cssStyle="width: 400px" >
 						<form:option value="${null}">Veuillez choisir un vol</form:option>
 						<c:forEach items="${vols}" var="vol">
 							<form:option value="${vol.id}">${vol.depart.nom} --> ${vol.arrivee.nom}</form:option>

@@ -64,13 +64,6 @@ public class EscaleCtrl {
 		model.addAttribute("aeroports",aeroports);
 		
 		model.addAttribute("mode", "edit");
-		
-//				Escale escale = escaleDao.find(id);
-//		List<Aeroport> aeroports = aeroportDao.findAll();
-//		Aeroport aeroport = aeroportDao.find(escale.getAeroport());
-//		model.addAttribute("escale", escale);
-//		model.addAttribute("aeroports", aeroports);
-
 		return "escale/escalesEdit";
 	}
 	
@@ -83,14 +76,17 @@ public class EscaleCtrl {
 		
 		List<Aeroport> aeroports= aeroportDao.findAll();
 		model.addAttribute("aeroports",aeroports);
+		model.addAttribute("mode", "add");
 		
 		return "escale/escalesEdit";
 	}
 	
 	@RequestMapping(value = "/save", method = RequestMethod.POST)
-	public String save(@ModelAttribute("escale") @Valid Escale escale, BindingResult result) {
+	public String save(@ModelAttribute("escale") @Valid Escale escale, @RequestParam("mode") String mode, BindingResult result) {
 		
-		
+		EscaleId id = new EscaleId();
+		id.setVol(escale.getVol().getId());
+		id.setAeroport(escale.getAeroport().getId());
 		escale.setVol(volDao.find(escale.getVol().getId()));  
 		escale.setAeroport(aeroportDao.find(escale.getAeroport().getId()));
 		
@@ -102,10 +98,10 @@ public class EscaleCtrl {
 //			return "escale/escalesEdit";
 //		}
 		
-//		if (escale.getVol().getId() != null && escale.getAeroport().getId()!=null) {
-//			escaleDao.update(escale);
-//		} else {
+//		if (mode.equals("add")) {
 			escaleDao.create(escale);
+//		} else {
+//		escaleDao.update(escale);
 //		}
 		return "redirect:list";
 	}
