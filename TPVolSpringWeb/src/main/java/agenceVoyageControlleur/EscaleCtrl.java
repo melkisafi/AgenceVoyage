@@ -87,8 +87,8 @@ public class EscaleCtrl {
 //		EscaleId id = new EscaleId();
 //		id.setVol(escale.getVol().getId());
 //		id.setAeroport(escale.getAeroport().getId());
-		escale.setVol(volDao.find(escale.getVol().getId()));  
-		escale.setAeroport(aeroportDao.find(escale.getAeroport().getId()));
+//		escale.setVol(volDao.find(escale.getVol().getId()));  
+//		escale.setAeroport(aeroportDao.find(escale.getAeroport().getId()));
 		
 //		
 //		if (result.hasErrors()){
