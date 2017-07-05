@@ -84,9 +84,9 @@ public class EscaleCtrl {
 	@RequestMapping(value = "/save", method = RequestMethod.POST)
 	public String save(@ModelAttribute("escale") @Valid Escale escale, @RequestParam("mode") String mode, BindingResult result) {
 		
-		EscaleId id = new EscaleId();
-		id.setVol(escale.getVol().getId());
-		id.setAeroport(escale.getAeroport().getId());
+//		EscaleId id = new EscaleId();
+//		id.setVol(escale.getVol().getId());
+//		id.setAeroport(escale.getAeroport().getId());
 		escale.setVol(volDao.find(escale.getVol().getId()));  
 		escale.setAeroport(aeroportDao.find(escale.getAeroport().getId()));
 		

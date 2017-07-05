@@ -66,13 +66,14 @@ public class ClientController {
 	}
 	
 	@RequestMapping(value = "/savePhy", method = RequestMethod.POST)
-	public String save(@ModelAttribute("client") ClientPhysique client) {	
+	public String save(@ModelAttribute("clientPhysique") ClientPhysique client) {	
+		System.out.println("Avant");
 		if (client.getId() == null) {
 			clientDao.create(client);
 		} else {
 			clientDao.update(client);
 		}
-
+		System.out.println("Après");
 		return "redirect:list";
 	}
 	
@@ -90,13 +91,13 @@ public class ClientController {
 	
 	@RequestMapping(value = "/saveEI", method = RequestMethod.POST)
 	public String save(@ModelAttribute("client") ClientEI client) {
-
+		
 		if (client.getId() == null) {
 			clientDao.create(client);
 		} else {
 			clientDao.update(client);
 		}
-
+		System.out.println("Après");
 		return "redirect:list";
 	}
 	
