@@ -90,9 +90,6 @@ public class EscaleCtrl {
 		escale.setVol(volDao.find(escale.getVol().getId()));  
 		escale.setAeroport(aeroportDao.find(escale.getAeroport().getId()));
 		
-		//Derniere etape
-		//create escale
-		
 //		
 //		if (result.hasErrors()){
 //			return "escale/escalesEdit";
