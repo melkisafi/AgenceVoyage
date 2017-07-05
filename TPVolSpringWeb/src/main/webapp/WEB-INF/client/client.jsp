@@ -24,10 +24,10 @@
     </div>
     <ul class="nav navbar-nav">
       <li><a href="../accueil"><spring:message code="MenuNav.accueil" /></a></li>
-      <li><a href="../aeroport/list"><spring:message code="MenuNav.aeroport"/></a></li>
+      <li><a href="../aeroport/list"><spring:message code="MenuNav.aeroport" /></a></li>
       <li><a href="../vol/list"><spring:message code="MenuNav.vol" /></a></li>
-      <li><a href="../reservation/list"><spring:message code="MenuNav.reservation" /></a></li>
-      <li><a href="../passager/list"><spring:message code="MenuNav.passager" /></a></li>
+      <li><a href="#"><spring:message code="MenuNav.reservation" /></a></li>
+      <li><a href="#"><spring:message code="MenuNav.passager" /></a></li>
       <li><a href="../escale/list"><spring:message code="MenuNav.escale" /></a></li>
       <li class="active"><a href="../client/list"><b><spring:message code="MenuNav.client" /></b></a></li>
       <li><a href="../ville/list"><spring:message code="MenuNav.ville" /></a></li>
@@ -86,7 +86,7 @@
 						<td>${client.adresse.ville}</td>
 						<td>${client.numeroFax}</td>
 						<td>${client.numeroTel}</td>
-						<td>${client.login}</td>
+						<td>${client.login.id}</td>
 						<td><a href="edit?id=${client.id}" class="btn btn-info btn-sm"><span class="glyphicon glyphicon-pencil"></span></a></td>
 						<td><a href="delete?id=${client.id}" class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash"></span></a></td>
 					</tr>

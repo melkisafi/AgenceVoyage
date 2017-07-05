@@ -11,21 +11,21 @@
 		href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<title><spring:message code="aeroport.edit.title" /></title>
+	<title><spring:message code="client.edit.title" /></title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
 <body>
-<nav class="navbar navbar-inverse navbar-fixed-top">
+	<nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container-fluid">
     <div class="navbar-header">
       <a class="navbar-brand" ><spring:message code="accueil.title2" /></a>
     </div>
     <ul class="nav navbar-nav">
       <li><a href="../accueil"><spring:message code="MenuNav.accueil" /></a></li>
-      <li><a href="../aeroport/list"><spring:message code="MenuNav.aeroport"/></a></li>
+      <li><a href="../aeroport/list"><spring:message code="MenuNav.aeroport" /></a></li>
       <li><a href="../vol/list"><spring:message code="MenuNav.vol" /></a></li>
-      <li><a href="../reservation/list"><spring:message code="MenuNav.reservation" /></a></li>
-      <li><a href="../passager/list"><spring:message code="MenuNav.passager" /></a></li>
+      <li><a href="#"><spring:message code="MenuNav.reservation" /></a></li>
+      <li><a href="#"><spring:message code="MenuNav.passager" /></a></li>
       <li><a href="../escale/list"><spring:message code="MenuNav.escale" /></a></li>
       <li class="active"><a href="../client/list"><b><spring:message code="MenuNav.client" /></b></a></li>
       <li><a href="../ville/list"><spring:message code="MenuNav.ville" /></a></li>
