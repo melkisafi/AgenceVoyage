@@ -8,25 +8,25 @@ import javax.persistence.Embeddable;
 @Embeddable
 public class EscaleId implements Serializable {
 
-	private long aeroport;
-	private long vol;
+	private Aeroport aeroport;
+	private Vol vol;
 
 	public EscaleId() {
 	}
 
-	public long getAeroport() {
+	public Aeroport getAeroport() {
 		return aeroport;
 	}
 
-	public void setAeroport(long aeroport) {
+	public void setAeroport(Aeroport aeroport) {
 		this.aeroport = aeroport;
 	}
 
-	public long getVol() {
+	public Vol getVol() {
 		return vol;
 	}
 
-	public void setVol(long vol) {
+	public void setVol(Vol vol) {
 		this.vol = vol;
 	}
 
@@ -34,8 +34,8 @@ public class EscaleId implements Serializable {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + (int) (aeroport ^ (aeroport >>> 32));
-		result = prime * result + (int) (vol ^ (vol >>> 32));
+		result = prime * result + ((aeroport == null) ? 0 : aeroport.hashCode());
+		result = prime * result + ((vol == null) ? 0 : vol.hashCode());
 		return result;
 	}
 
@@ -48,11 +48,19 @@ public class EscaleId implements Serializable {
 		if (getClass() != obj.getClass())
 			return false;
 		EscaleId other = (EscaleId) obj;
-		if (aeroport != other.aeroport)
+		if (aeroport == null) {
+			if (other.aeroport != null)
+				return false;
+		} else if (!aeroport.equals(other.aeroport))
 			return false;
-		if (vol != other.vol)
+		if (vol == null) {
+			if (other.vol != null)
+				return false;
+		} else if (!vol.equals(other.vol))
 			return false;
 		return true;
 	}
+
+
 
 }
