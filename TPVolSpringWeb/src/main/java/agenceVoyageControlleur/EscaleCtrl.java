@@ -86,10 +86,6 @@ public class EscaleCtrl {
 	
 	@RequestMapping(value = "/save", method = RequestMethod.POST)
 	public String save(@ModelAttribute("escale") @Valid Escale escale, @RequestParam("mode") String mode, BindingResult result) {
-		
-//		EscaleId id = new EscaleId();
-//		id.setVol(escale.getVol().getId());
-//		id.setAeroport(escale.getAeroport().getId());
 		escale.setVol(volDao.find(escale.getVol().getId()));  
 		escale.setAeroport(aeroportDao.find(escale.getAeroport().getId()));
 		
@@ -104,5 +100,18 @@ public class EscaleCtrl {
 		escaleDao.update(escale);
 		}
 		return "redirect:list";
+	}
+	
+	@RequestMapping(value="/delete")
+	public String delete(@RequestParam(name = "vol", required = true) Long volId, @RequestParam(name = "aero", required = true) Long aeroId, Model model) {
+		EscaleId id = new EscaleId();
+		Vol vol = volDao.find(volId);
+		Aeroport aeroport = aeroportDao.find(aeroId);
+		
+		id.setAeroport(aeroport);
+		id.setVol(vol);
+		
+		escaleDao.delete(id);
+		return "forward:list";
 	}
 }
