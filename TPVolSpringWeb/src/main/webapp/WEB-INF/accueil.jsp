@@ -28,7 +28,7 @@
       <li><a href="client/list"><spring:message code="MenuNav.client" /></a></li>
       <li><a href="ville/list"><spring:message code="MenuNav.ville" /></a></li>
       <li><a href="#"><spring:message code="MenuNav.compagnie" /></a></li>
-      <li><a href="#"><spring:message code="MenuNav.login" /></a></li>
+      <li><a href="login/list"><spring:message code="MenuNav.login" /></a></li>
     </ul>
   </div>
 </nav>

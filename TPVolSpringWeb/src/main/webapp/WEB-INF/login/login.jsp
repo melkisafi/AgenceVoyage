@@ -15,26 +15,26 @@
 	  
 </head>
 <body>
-
-<nav class="navbar navbar-inverse">
+<nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container-fluid">
     <div class="navbar-header">
       <a class="navbar-brand" ><spring:message code="accueil.title2" /></a>
     </div>
     <ul class="nav navbar-nav">
-      <li class="active"><a href="accueil"><b><spring:message code="MenuNav.accueil" /></b></a></li>
-      <li><a href="aeroport/list"><spring:message code="MenuNav.aeroport" /></a></li>
-      <li><a href="vol/list"><spring:message code="MenuNav.vol" /></a></li>
-      <li><a href="#"><spring:message code="MenuNav.reservation" /></a></li>
-      <li><a href="#"><spring:message code="MenuNav.passager" /></a></li>
-      <li><a href="#"><spring:message code="MenuNav.escale" /></a></li>
-      <li><a href="#"><spring:message code="MenuNav.client" /></a></li>
-      <li><a href="#"><spring:message code="MenuNav.ville" /></a></li>
+      <li><a href="accueil"><spring:message code="MenuNav.accueil" /></a></li>
+      <li><a href="../aeroport/list"><spring:message code="MenuNav.aeroport" /></a></li>
+      <li><a href="../vol/list"><spring:message code="MenuNav.vol" /></a></li>
+      <li><a href="../reservation/list"><spring:message code="MenuNav.reservation" /></a></li>
+      <li><a href="../passager/list"><spring:message code="MenuNav.passager" /></a></li>
+      <li><a href="../escale/list"><spring:message code="MenuNav.escale" /></a></li>
+      <li><a href="../client/list"><spring:message code="MenuNav.client" /></a></li>
+      <li><a href="../ville/list"><spring:message code="MenuNav.ville" /></a></li>
       <li><a href="#"><spring:message code="MenuNav.compagnie" /></a></li>
-      <li><a href="#"><spring:message code="MenuNav.login" /></a></li>
+      <li class="active"><a href="../login/list"><b><spring:message code="MenuNav.login" /></b></a></li>
     </ul>
   </div>
 </nav>
+<div style="height: 100px;"></div>
 
 <div class="container">
 		<fieldset>
